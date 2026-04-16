@@ -11,6 +11,6 @@ with source as (
 
 select
     id          as relationship_id,
-    tutor_id,
-    student_id
+  tutor as  tutor_id,
+  student as  student_id
 from source

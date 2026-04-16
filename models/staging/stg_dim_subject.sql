@@ -10,9 +10,9 @@ with source as (
 )
 
 select
-    id                  as subject_id,
-    core_subject_type,
-    left as left_num,                
-    right as right_num,
-    roll_up_to
+    Indentification as subject_id,
+    'Core Subject Type' as core_subject_type,
+    'left' as left_num,                
+    'right' as right_num,
+   'Roll Up To' AS roll_up_to
 from source

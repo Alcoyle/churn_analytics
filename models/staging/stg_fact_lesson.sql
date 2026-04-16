@@ -10,7 +10,7 @@ with source as (
 )
 
 select
-    lessons_b_id,
+    lessonsb_id,
     lesson_id,
     start_at,
     finish_at,

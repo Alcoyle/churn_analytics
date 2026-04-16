@@ -4,7 +4,7 @@ models:
   - name: stg_fact_lesson
     description: Cleaned lesson fact table with parsed dates
     columns:
-      - name: lessons_b_id
+      - name: lessonsb_id
         tests: [not_null, unique]
       - name: lesson_id
         tests: [not_null]
