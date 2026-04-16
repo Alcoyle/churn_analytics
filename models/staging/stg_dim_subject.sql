@@ -12,7 +12,7 @@ with source as (
 select
     id                  as subject_id,
     core_subject_type,
-    left,                
-    right,
+    left as left_num,                
+    right as right_num,
     roll_up_to
 from source
