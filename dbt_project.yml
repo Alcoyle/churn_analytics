@@ -69,7 +69,7 @@ seeds:
         roll_up_to: INT64
     fact_lesson:
       +column_types:
-        lessons_b_id: INT64
+        lessonsb_id: INT64
         lesson_id: INT64
         start_at: TIMESTAMP
         finish_at: TIMESTAMP
