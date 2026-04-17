@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: slv_lessons_enriched
+    description: >
+      Core semantic dataset joining fact lessons to relationships,
+      students, tutors and subjects.
+    columns:
+      - name: lessonsb_id
+        tests: [not_null]
+      - name: student_id
+        tests: [not_null]
+
+  - name: slv_student_lesson_gaps
+    description: >
+      Per student, each completed lesson with the gap in days
+      since their previous completed lesson.
+
+  - name: slv_churn_reactivation_events
+    description: >
+      One row per churn or reactivation event per student.
+      Churn date = 30 days after last lesson before gap.
+      Reactivation date = date student returned after 30+ day gap.
+    columns:
+      - name: event_type
+        tests:
+          - accepted_values:
+              values: ['churn', 'reactivation']
