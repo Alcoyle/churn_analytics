@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_fact_lesson
+    description: Cleaned lesson fact table with parsed dates
+    columns:
+      - name: lessonsb_id
+        tests: [not_null, unique]
+      - name: lesson_id
+        tests: [not_null]
+      - name: status
+        tests: [not_null]
+
+  - name: stg_dim_relationship
+    description: Maps relationship IDs to tutor and student
+    columns:
+      - name: relationship_id
+        tests: [not_null, unique]
+
+  - name: stg_dim_subject
+    description: Subject hierarchy table
+    columns:
+      - name: subject_id
+        tests: [not_null, unique]
+
+  - name: stg_dim_lesson
+    description: Bridge between lessons, relationships and subjects
+    columns:
+      - name: dim_lesson_id
+        tests: [not_null, unique]
