@@ -10,7 +10,7 @@ with source as (
 )
 
 select
-    id          as relationship_id,
+    SAFE_CAST(id AS INT64)   as relationship_id,
   tutor as  tutor_id,
   student as  student_id
 from source
