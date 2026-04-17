@@ -6,10 +6,12 @@ models:
       Core semantic dataset joining fact lessons to relationships,
       students, tutors and subjects.
     columns:
-      - name: lessonsb_id
-        tests: [not_null]
+      - name: lessons_b_id
+        tests:
+          - not_null
       - name: student_id
-        tests: [not_null]
+        tests:
+          - not_null
 
   - name: slv_student_lesson_gaps
     description: >
@@ -25,4 +27,7 @@ models:
       - name: event_type
         tests:
           - accepted_values:
-              values: ['churn', 'reactivation']
+              arguments:
+                values:
+                  - 'churn'
+                  - 'reactivation'
