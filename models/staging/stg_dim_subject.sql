@@ -11,8 +11,8 @@ with source as (
 
 select
     Indentification as subject_id,
-    'Core Subject Type' as core_subject_type,
-    'left' as left_num,                
-    'right' as right_num,
-   'Roll Up To' AS roll_up_to
+    `Core Subject Type` as core_subject_type, --backticks to help parse the spaces in the column titles
+    `left` as left_num,                
+    `right` as right_num,
+   `Roll Up To` AS roll_up_to
 from source
