@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: fct_daily_churn_reactivation
+    description: >
+      Daily churn and reactivation volumes for February 2026,
+      with running cumulative totals.
+    columns:
+      - name: event_date
+        tests:
+          - not_null
+          - unique
+
+  - name: fct_daily_tutor_activity
+    description: >
+      Daily activity per tutor including lessons delivered
+      and associated student churn and reactivation events.
+    columns:
+      - name: activity_date
+        tests:
+          - not_null
+      - name: tutor_id
+        tests:
+          - not_null
+
+  - name: fct_tutor_summary
+    description: >
+      One row per tutor summarising all-time lesson activity,
+      unique students, churn and reactivation counts and churn rate.
+    columns:
+      - name: tutor_id
+        tests:
+          - not_null
+          - unique
+      - name: churn_rate_pct
+        tests:
+          - not_null
+
+  - name: fct_student_summary
+    description: >
+      One row per student with lesson history, days since last lesson,
+      churn/reactivation event counts and current active status.
+    columns:
+      - name: student_id
+        tests:
+          - not_null
+          - unique
+      - name: current_status
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - 'active'
+                  - 'churned'
+      - name: days_since_last_lesson
+        tests:
+          - not_null
